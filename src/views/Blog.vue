@@ -1,6 +1,7 @@
 <template>
   <div class="blog">
     <h1>This is a blog page</h1>
+
     <video
       controls
       autoplay
@@ -11,6 +12,7 @@
       ref="videoo"
     >
       <source
+        id="imgid"
         src="http://video.itunes.apple.com/apple-assets-us-std-000001/Video118/v4/67/76/0d/67760df3-65e6-a3d3-02a7-81340664bcf2/mzvf_5168019211393929040.720w.h264lc.U.p.m4v"
       />
     </video>
@@ -22,9 +24,11 @@
 export default {
   mounted() {
     const var123 = this.$refs.videoo;
+    var obj = document.getElementById("imgid");
     var123.play();
     var123.currentTime = 12;
-    console.log(this.$refs.videoo);
+    console.log(var123);
+    console.log(obj.getAttribute("src"));
   },
   methods: {
     onClick: function () {
